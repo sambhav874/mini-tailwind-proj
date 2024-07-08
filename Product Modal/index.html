@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config={
+            darkMode:'class',
+        }
+    </script>
+    <style>
+        input[type=checkbox]{
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 70px;
+  height: 30px;
+  background: grey;
+  display: block;
+  border-radius: 20px;
+  position: relative;
+}
+
+label:after {
+  content: ' ';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border-radius: 30px;
+  transition: 1s;
+}
+
+.input:checked{
+    right: 0;
+    background:#bada55
+
+}
+
+input:checked + label {
+    right: 0;
+  background: #bada55;
+}
+
+input:checked + label:after {
+  left: calc(100% - 17px);
+  transform: translateX(-50%);
+}
+
+label:active:after {
+  width: 130px;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <nav
+        class=" bg-slate-900 sticky flex dark:bg-slate-300 dark:text-black  justify-between p-4 text-gray-200">
+        
+        <p class="text-right text-6xl mt-2 ml-4 hover:animate-pulse hover:text-lime-500 tracking-wide font-bold  hover:scale-90 duration-500 dark:hover:text-lime-200">Apple</p>
+      
+            
+        <ul class="px-28 py-4 flex space-x-11 mb-2 shadow-2xl hover:scale-90 duration-500 font-bold justify-end">
+            <a class="cursor-pointer text-2xl mt-2  hover:scale-90 duration-500 hover:text-lime-400 dark:hover:text-lime-200">Home</a>
+            <a class="cursor-pointer text-2xl mt-2  hover:scale-90 duration-500 hover:text-lime-400 dark:hover:text-lime-200">Contact</a>
+            <a class="cursor-pointer text-2xl mt-2  hover:scale-90 duration-500 hover:text-lime-400 dark:hover:text-lime-200">About</a>
+            <a class="cursor-pointer text-2xl mt-2  hover:scale-90 duration-500 hover:text-lime-400 dark:hover:text-lime-200">Contents</a>
+
+            <div class="flex justify-center m-3">
+                <input type="checkbox" id="toggle"><label for="toggle" ">Toggle</label>
+            </div>
+            <script>
+                document.getElementById('toggle').addEventListener('change',function(){
+                    if(this.checked){
+                        document.documentElement.classList.add('dark');
+                    }
+                    else{
+                        document.documentElement.classList.remove('dark');
+                    }
+                })
+            </script>
+        </ul>
+        
+    </nav>
+
+
+    <div class="flex  min-h-screen items-center justify-center dark:bg-slate-100 bg-slate-800">
+
+        <div
+            class="flex flex-col p-6 m-3 space-y-10 bg-blue-300 dark:bg-slate-100 rounded-2xl shadow-2xl md:flex-row md:space-y-0 md:space-x-10 md:m-0 md:p-16">
+
+            <div class="p-2 mx-1 mt-1 pb-4 space-x-10  rounded-xl bg-slate-800">
+                
+                
+            <img src="/css_projects/images/apple-airpods-max-wireless-bluetooth-over-the-ear-headphones-with-smart-case-1000x1000.webp"
+                class="mx-auto hover:scale-105 duration-300 mb-6 w-96 rounded-xl flex bg-white  rounded-xl text-white hover:bg-violet-700 duration-1000   hover:bg-animate-pulse shadow-black shadow-2xl  ">
+
+            </div>
+
+            <div class="flex-col flex space-y-6">
+
+                <div class="flex flex-col mb-4 space-y-3 text-center md:text-left">
+                    <div>
+                        <div class="inline-block px-3 py-1 text-sm text-white bg-black rounded-full">
+                            Free Shipping
+                        </div>
+                    </div>
+                    <div class="max-w-sm text-2xl font-medium"> Apple Airpods Max</div>
+                    <div class="flex flex-col mb-4 space-y-3 text-center md:text-left">
+                        <p class="line-through">$549</p>
+                        <p class="text-5xl font-bold">$500</p>
+                        <p class="text-sm font-light text-gray-200 dark:text-black">This offer is available till 7 June or as long as
+                            the stock lasts.</p>
+                    </div>
+                    <div class="group">
+                        <button
+                            class="w-full transition-all duration-150 bg-blue-700 text-white border-b-8 border-b-blue-700 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-blue-700 group-hover:border-t-blue-700 group-hover:shadow-lg">
+
+                            <div class="px-8 py-4 duration-150 bg-blue-500 rounded-lg group-hover:bg-blue-700">
+                                Buy Now
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center space-x-3 group">
+                        <div class="w-3 h-3 bg-green-400 rounded-full group-hover:animate-ping"></div>
+                        <div class="text-sm">50+ pcs. in stock</div>
+                    </div>
+
+
+                    <div class="flex flex-col space-y-4 md:space-y-0 md:space-x-4 md:flex-row">
+                        <button
+                            class="flex items-center justify-center py-3 px-5 space-x-3 border-2 border-gray-300 rounded-lg shadow-sm hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150">
+                            <img src="/css_projects/images/scale-svgrepo-com.svg" class="w-8">
+                            <span>Add to Cart</span>
+                        </button>
+                        <br>
+                        <button
+                            class="flex items-center justify-center py-3 px-5 space-x-3 border-2 border-gray-300 rounded-lg shadow-sm hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150">
+                            <img src="/css_projects/images/chat-svgrepo-com.svg" class="w-8">
+                            <span>Add to Wishlist</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

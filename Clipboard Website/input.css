@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    h3{
+        @apply mb-8 text-5xl font-bold text-diffGreen md:text-5xl font-mono;
+    }
+
+    p{
+        @apply tracking-relaxed;
+    }
+
+}
+
+
+.button-container{
+@apply p-4 px-8 rounded-full shadow-lg hover:duration-500 hover:opacity-80 hover:-translate-y-5;
+}
+
+.section-container{
+    @apply max-w-[98%] bg-diffYellow1  mx-auto text-center px-20 ;
+}
+
+.contain-button{
+@apply flex flex-col justify-center w-full space-y-8 space-x-0 text-xl text-white md:flex-row md:space-y-0 md:space-x-6; 
+}
+
+main{
+    background-image: #fefbe9;
+    background-size:contain;
+    margin:10px
+    
+
+}
+
+body{
+    @apply bg-diffGreen1
+}
+
+h5{
+   @apply text-diffGreen font-myFont text-3xl font-bold text-left sm:text-center md:text-left;
+}
+
+.ficon:hover {
+  filter: invert(53%) sepia(68%) saturate(434%) hue-rotate(121deg)
+    brightness(101%) contrast(94%);
+}
+
+p{
+    @apply text-2xl font-sans font-normal  leading-7 max-w-2xl mx-auto my-8 text-diffOrange ; 
+}
+
+@media (max-width: 576px){
+    body{
+        background-color: '#fefbe9'
+        
+    }
+}

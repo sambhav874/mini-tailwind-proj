@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config={
+            darkMode:'class',
+        }
+    </script>
+    <style>
+        input[type=checkbox]{
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 70px;
+  height: 30px;
+  background: grey;
+  display: block;
+  border-radius: 20px;
+  position: relative;
+}
+
+label:after {
+  content: ' ';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border-radius: 30px;
+  transition: 1s;
+}
+
+.input:checked{
+    right: 0;
+    background:#bada55
+
+}
+
+input:checked + label {
+    right: 0;
+  background: #bada55;
+}
+
+input:checked + label:after {
+  left: calc(100% - 17px);
+  transform: translateX(-50%);
+}
+
+label:active:after {
+  width: 130px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="flex items-center justify-center min-h-screen bg-cyan-50 dark:bg-black">
+        <div class="bg-white p-6 m-3 space-y-10 shadow-2xl rounded-3xl md:p-40 dark:bg-slate-900">
+            <div class="flex flex-col  items-center justify-center space-y-3 md:flex-row md:space-y-0 md:space-x-8 md:mb-24 md:justify-end">
+                <div class="group ">
+                    <a href="#" class="text-2xl dark:text-white">Vector</a>
+                    <div class="mx-2 mt-2 duration-500 border-b-2 opacity-0 border-black group-hover:opacity-100 dark:border-white">
+                        
+                    </div>
+                </div>
+                <div class="group">
+                    <a href="#" class="text-2xl dark:text-white">Illustrations</a>
+                    <div class="mx-2 mt-2 duration-500 border-b-2 opacity-0 border-black group-hover:opacity-100 dark:border-white">
+                        
+                    </div>
+                </div>
+                <div class="group">
+                    <a href="#" class="text-2xl dark:text-white">Images</a>
+                    <div class="mx-2 mt-2 duration-500 border-b-2 opacity-0 border-black group-hover:opacity-100 dark:border-white">
+                        
+                    </div>
+                </div>
+                <div class="group">
+                    <a href="#" class="text-2xl dark:text-white">Icons</a>
+                    <div class="mx-2 mt-2 duration-500 border-b-2 opacity-0 border-black group-hover:opacity-100 dark:border-white">
+                        
+                    </div>
+                </div>
+
+                <div class="group">
+                    <div class="flex justify-center m-3">
+                        <input type="checkbox" id="toggle"><label for="toggle" ">Toggle</label>
+                    </div>
+                    <script>
+                        document.getElementById('toggle').addEventListener('change',function(){
+                            if(this.checked){
+                                document.documentElement.classList.add('dark');
+                            }
+                            else{
+                                document.documentElement.classList.remove('dark');
+                            }
+                        })
+                    </script>
+                    <div class="mx-2 mt-2 duration-500 border-b-2 opacity-0 border-black group-hover:opacity-100">
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="flex flex-col justify-between space-y-6 md:flex-row md:space-y-0 ">
+
+                <div class="flex justify-between border-b">
+
+                    <input type="text" class="ml-6 p-4 px-20 shadow-2xl rounded-lg  shadow-black border-none md:w-80 placeholder:font-thin focus:outline-none dark:shadow-white dark:bg-slate-700 dark:text-white" placeholder="Search">
+
+
+                    <button class="px-2 rounded-xl hover:bg-slate-200 hover:scale-105 hover:duration-500"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                      </svg></button>
+                </div>
+                <button class="py-3 px-28 text-lg font-normal text-white bg-black rounded-md shadow-2xl duration-500 hover:bg-white hover:text-black">Upload</button>
+            </div>
+
+            <div class="grid gap-4 md:grid-cols-3  xl:grid-cols-4 m-4 p-6">
+
+                <div class="relative group hover:scale-125 duration-1000 m-4">
+                    
+                    <img src="/css_projects/images/imageGallery/1.jpg" alt="" class="w-72">
+                    <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 bg-black opacity-0 group-hover:opacity-100 bg-opacity-40">
+                        <div class="flex justify-between w-full">
+                            <div class="font-normal">
+                                <p class="text-sm font-medium">Clouds Hiding Moon</p>
+                                <p class="text-xs">2540 likes - 270 shares</p>
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-bookmark-heart" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group hover:scale-125 duration-1000 m-4">
+                    <img src="/css_projects/images/imageGallery/2.jpg" alt="" class="w-72">
+                    <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 bg-black opacity-0 group-hover:opacity-100 bg-opacity-40">
+                        <div class="flex justify-between w-full">
+                            <div class="font-normal">
+                                <p class="text-sm font-medium">Mountains under blue sky </p>
+                                <p class="text-xs">4652 likes - 548 shares</p>
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-bookmark-heart" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group hover:scale-125 duration-1000 m-4">
+                    <img src="/css_projects/images/imageGallery/3.jpg" alt="" class="w-72 hover:scale-105 duration-1000">
+                    <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 bg-black opacity-0 group-hover:opacity-100 bg-opacity-40 hover:scale-100 duration-1000">
+                        <div class="flex justify-between w-full">
+                            <div class="font-normal">
+                                <p class="text-sm font-medium">Artistic Astro Photography</p>
+                                <p class="text-xs">1947 likes - 173 shares</p>
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-bookmark-heart" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group hover:scale-125 duration-1000 m-4">
+                    <img src="/css_projects/images/imageGallery/4.jpg" alt="" class="w-72">
+                    <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 bg-black opacity-0 group-hover:opacity-100 bg-opacity-40 hover:scale-105 duration-1000">
+                        <div class="flex justify-between w-full">
+                            <div class="font-normal">
+                                <p class="text-sm font-medium">Mountains and the stars</p>
+                                <p class="text-xs">2689 likes - 249 shares</p>
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-bookmark-heart" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group hover:scale-125 duration-1000 m-4">
+                    <img src="/css_projects/images/imageGallery/5.jpg" alt="" class="w-72">
+                    <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 bg-black opacity-0 group-hover:opacity-100 bg-opacity-40">
+                        <div class="flex justify-between w-full">
+                            <div class="font-normal">
+                                <p class="text-sm font-medium">Leaves under pink sky </p>
+                                <p class="text-xs">5382 likes - 732 shares</p>
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-bookmark-heart" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group hover:scale-125 duration-1000 m-4">
+                    <img src="/css_projects/images/imageGallery/6.jpg" alt="" class="w-72">
+                    <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 bg-black opacity-0 group-hover:opacity-100 bg-opacity-40">
+                        <div class="flex justify-between w-full">
+                            <div class="font-normal">
+                                <p class="text-sm font-medium">The Galaxy</p>
+                                <p class="text-xs">1953 likes - 234 shares</p>
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-bookmark-heart" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group hover:scale-125 duration-1000 m-4">
+                    <img src="/css_projects/images/imageGallery/7.jpg" alt="" class="w-72">
+                    <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 bg-black opacity-0 group-hover:opacity-100 bg-opacity-40">
+                        <div class="flex justify-between w-full">
+                            <div class="font-normal">
+                                <p class="text-sm font-medium">Artistic Sky Photo</p>
+                                <p class="text-xs">732 likes - 129 shares</p>
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-bookmark-heart" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group hover:scale-125 duration-1000 m-4">
+                    <img src="/css_projects/images/imageGallery/8.jpg" alt="" class="w-72">
+                    <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 bg-black opacity-0 group-hover:opacity-100 bg-opacity-40">
+                        <div class="flex justify-between w-full">
+                            <div class="font-normal">
+                                <p class="text-sm font-medium">Golden ray of light</p>
+                                <p class="text-xs">6743 likes - 463 shares</p>
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-bookmark-heart" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group hover:scale-125 duration-1000 m-4">
+                    <img src="/css_projects/images/imageGallery/9.jpg" alt="" class="w-72">
+                    <div class="absolute bottom-0 left-0 right-0 p-2 px-4 text-white duration-500 bg-black opacity-0 group-hover:opacity-100 bg-opacity-40">
+                        <div class="flex justify-between w-full">
+                            <div class="font-normal">
+                                <p class="text-sm font-medium">Full Moon</p>
+                                <p class="text-xs">3721 likes - 435 shares</p>
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-bookmark-heart" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
